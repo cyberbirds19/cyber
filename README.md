@@ -58,7 +58,7 @@ CyberSecurity-Awareness-Hub/
 
 ## 👤 Author
 
-- [Your Name](https://www.instagram.com/cyber_.tech)
+- [Cyber Tech](https://www.instagram.com/cyber_.tech)
 
 ## 📄 License
 
