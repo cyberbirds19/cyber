@@ -28,7 +28,7 @@ A modern, responsive, and informative website focused on raising cybersecurity a
 1. Clone the repository:
 
 ```bash
-git clone 
+git clone https://github.com/cyber-tech19/cyber.git
 ```
 
 2. Navigate to the project folder:
