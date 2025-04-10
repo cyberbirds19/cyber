@@ -42,7 +42,7 @@ cd cyber
 ## 📁 Folder Structure
 
 ```
-CyberSecurity-Awareness-Hub/
+Cyber/
 │
 ├── index.html
 ├── contact.html
