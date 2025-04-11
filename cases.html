@@ -3,15 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cyber Awareness</title>
+    <title>Cyber Crime Case Studies | Cyber Birds</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="cyber crime cases, cybersecurity examples, digital crime studies" name="keywords">
+    <meta content="Explore real-world cyber crime case studies including Operation Innocent Images and corporate credit card fraud at a BPO." name="description">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -26,21 +29,45 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/404.css" rel="stylesheet">
     
     <style>
-        /* New Accordion Styles */
-        .case-accordion {
-            margin-bottom: 30px;
+        :root {
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #4a6bff;
+            --light-bg: #f8f9fa;
+            --dark-text: #2d3748;
+        }
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Case Study Accordion */
+        .case-study {
+            margin-bottom: 2rem;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .case-study:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         
         .case-header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 20px;
+            padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -49,104 +76,139 @@
         }
         
         .case-header:hover {
-            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
         }
         
         .case-header h3 {
             margin: 0;
             font-size: 1.4rem;
+            font-weight: 600;
         }
         
         .case-content {
             padding: 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: #f9f9f9;
+            transition: max-height 0.5s ease-out;
+            background-color: white;
         }
         
         .case-content-inner {
-            padding: 25px;
+            padding: 2rem;
         }
         
-        .case-accordion.active .case-content {
+        .case-study.active .case-content {
             max-height: 2000px;
         }
         
+        /* Case Metadata */
         .case-meta {
             display: flex;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 1rem;
+            margin: 1rem 0;
             flex-wrap: wrap;
         }
         
         .case-meta span {
-            background: rgba(255,255,255,0.2);
-            padding: 3px 10px;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
         }
         
+        .case-meta i {
+            margin-right: 0.3rem;
+        }
+        
+        /* Case Images */
         .case-image {
             width: 100%;
             height: auto;
-            border-radius: 5px;
-            margin: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
         }
         
+        /* Quick Links */
         .quick-links {
-            background: #f8f9fa;
-            padding: 30px;
+            background: var(--light-bg);
+            padding: 1.5rem;
             border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 120px;
         }
         
         .quick-links h3 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 1.2rem;
         }
         
         .quick-link-item {
-            margin-bottom: 10px;
+            margin-bottom: 0.8rem;
         }
         
         .quick-link-item a {
             display: block;
-            padding: 10px 15px;
+            padding: 0.8rem 1rem;
             background: white;
-            border-radius: 5px;
-            color: #333;
+            border-radius: 6px;
+            color: var(--dark-text);
             text-decoration: none;
             transition: all 0.3s ease;
-            border-left: 4px solid #1e3c72;
+            border-left: 4px solid var(--accent-color);
+            font-weight: 500;
         }
         
         .quick-link-item a:hover {
-            background: #1e3c72;
+            background: var(--accent-color);
             color: white;
             transform: translateX(5px);
+        }
+        
+        /* Key Takeaways */
+        .key-takeaways {
+            background: #f0f7ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 0 6px 6px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .key-takeaways h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .quick-links {
+                position: static;
+                margin-bottom: 3rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
+    <!-- Spinner -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
 
-
-    <!-- Navbar Start -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-shield-alt"></i>Cyber Birds</h2>
+            <h2 class="m-0 text-primary"><i class="fa fa-shield-alt me-2"></i>Cyber Birds</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -155,321 +217,606 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="cases.html" class="nav-item nav-link active">Case Studies</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="register.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
-    <!-- Navbar End -->
 
-
-    <!-- Header Start -->
+    <!-- Page Header -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <h1 class="display-3 text-white animated slideInDown">Cyber Crime Case Studies</h1>
+                    <p class="text-white mb-4">Real-world examples of cyber threats and how they were investigated</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Case Studies</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Case Studies</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Header End -->
 
-
-    <!-- Cases Start -->
+    <!-- Main Content -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <!-- Quick Links Sidebar -->
                 <div class="col-lg-4">
-                    <div class="quick-links sticky-top" style="top: 100px;">
-                        <h3><i class="fas fa-bookmark me-2"></i>Quick Case Access</h3>
+                    <div class="quick-links">
+                        <h3><i class="fas fa-bookmark me-2"></i>Case Navigation</h3>
                         <div class="quick-link-item">
-                            <a href="#case1">Operation Innocent Images</a>
+                            <a href="#case1"><i class="fas fa-child me-2"></i>Operation Innocent Images</a>
                         </div>
                         <div class="quick-link-item">
-                            <a href="#case2">Corporate Credit Card Fraud</a>
+                            <a href="#case2"><i class="fas fa-credit-card me-2"></i>Corporate Credit Card Fraud</a>
                         </div>
                         <div class="quick-link-item">
-                            <a href="#case3">First Cyber Harassment Case</a>
+                            <a href="#case3"><i class="fas fa-credit-card me-2"></i>WannaCry Ransomware Attack</a>
                         </div>
                         <div class="quick-link-item">
-                            <a href="#case4">Online Marketing Scam</a>
+                            <a href="#case4"><i class="fas fa-credit-card me-2"></i>Stuxnet Worm</a>
                         </div>
                         <div class="quick-link-item">
-                            <a href="#case5">TJX Data Breach</a>
+                            <a href="#case5"><i class="fas fa-credit-card me-2"></i>Yahoo Data Breach</a>
                         </div>
                         <div class="quick-link-item">
-                            <a href="#case6">Bangladesh Bank Heist</a>
+                            <a href="#case6"><i class="fas fa-credit-card me-2"></i>Target Corporation Data Breach</a>
                         </div>
                         <div class="quick-link-item">
-                            <a href="#case7">WannaCry Ransomware</a>
+                            <a href="#case7"><i class="fas fa-credit-card me-2"></i>Equifax Data Breach</a>
+                        </div>
+                        <div class="quick-link-item">
+                            <a href="#case8"><i class="fas fa-credit-card me-2"></i>ATM Malware Attack on Cosmos Bank</a>
+                        </div>
+                        <div class="quick-link-item">
+                            <a href="#case9"><i class="fas fa-credit-card me-2"></i>UIDAI Aadhaar Data Leak</a>
+                        </div>
+                        <div class="quick-link-item">
+                            <a href="#case10"><i class="fas fa-credit-card me-2"></i>Sony Pictures Hack by Lazarus Group</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Main Content -->
+                <!-- Case Studies Content -->
                 <div class="col-lg-8">
-                    <div class="section-title text-center mb-5">
-                        <h1 class="mb-4">Real World Cyber Crime Cases</h1>
-                        <p>Explore detailed case studies of significant cyber crimes from around the world. Click on any case to view full details.</p>
+                    <div class="text-center mb-5">
+                        <h1 class="mb-3">Real-World Cyber Crime Investigations</h1>
+                        <p class="lead">Examining landmark cases that shaped cybersecurity practices worldwide</p>
                     </div>
                     
                     <!-- Case 1 -->
-                    <div class="case-accordion" id="case1">
+                    <div class="case-study" id="case1">
                         <div class="case-header">
                             <h3>Operation Innocent Images</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="case-content">
                             <div class="case-content-inner">
-                                <img src="https://www.fbi.gov/image-repository/innocent-images.jpg/@@images/image/high" alt="FBI Agent in the Innocent Images Unit" class="case-image" />
+                                <img src="img/operation.jpeg" alt="FBI Agent working on Operation Innocent Images case" class="case-image">
                                 
                                 <div class="case-meta">
                                     <span><i class="fas fa-globe-americas"></i> United States</span>
                                     <span><i class="fas fa-calendar-alt"></i> 1993-2007</span>
-                                    <span><i class="fas fa-user-shield"></i> FBI</span>
+                                    <span><i class="fas fa-user-shield"></i> FBI Investigation</span>
+                                    <span><i class="fas fa-balance-scale"></i> 6,800+ convictions</span>
                                 </div>
                                 
-                                <p>In May 1993, a 10-year-old boy went missing from his neighborhood in Brentwood, Maryland. What began as a missing child case soon revealed a far more disturbing truth—one that would lead to a major nationwide cybersecurity operation.</p>
+                                <h4>Case Background</h4>
+                                <p>In May 1993, a missing child case in Maryland uncovered a disturbing pattern of online child exploitation that would lead to one of the FBI's most significant cyber investigations. What began as a local police matter revealed an extensive network of pedophiles using early internet technologies to share illegal content and groom victims.</p>
                               
-                                <p>FBI agents and local police discovered two men who had been grooming and abusing children for over 25 years. These individuals had recently taken their crimes online, using private computer bulletin boards to share illegal images and communicate with other pedophiles.</p>
+                                <p>The investigation exposed how offenders were leveraging private computer bulletin boards to distribute child sexual abuse material (CSAM) and communicate with like-minded individuals across state lines. This discovery prompted the FBI to launch <strong>Operation Innocent Images</strong> in September 1994, marking a new era in federal cybercrime enforcement.</p>
                               
-                                <p>This discovery led to the launch of <strong>Operation Innocent Images</strong> in September 1994. Undercover agents infiltrated online pedophile communities, uncovering graphic images and disturbing conversations.</p>
-                              
-                                <h4>Key Outcomes</h4>
+                                <h4>Investigation Methodology</h4>
+                                <p>FBI agents employed innovative undercover techniques for the time:</p>
                                 <ul>
-                                    <li>100+ search warrants executed in 1995</li>
-                                    <li>Operation evolved into the Innocent Images National Initiative</li>
-                                    <li>20,000+ cases opened by 2007</li>
-                                    <li>6,800+ convictions secured</li>
+                                    <li>Created fake online personas to infiltrate pedophile networks</li>
+                                    <li>Monitored private bulletin boards and chat rooms</li>
+                                    <li>Developed digital forensic techniques to trace online activity</li>
+                                    <li>Collaborated with international law enforcement agencies</li>
                                 </ul>
+                                
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key me-2"></i>Key Takeaways</h4>
+                                    <ul>
+                                        <li>First major case demonstrating how criminals were adapting to new technologies</li>
+                                        <li>Established precedent for federal jurisdiction in online crimes</li>
+                                        <li>Led to creation of specialized cybercrime units in law enforcement</li>
+                                        <li>Highlighted need for international cooperation in cyber investigations</li>
+                                    </ul>
+                                </div>
+                                
+                                <h4>Outcomes and Impact</h4>
+                                <p>The operation evolved into the Innocent Images National Initiative (IINI), which by 2007 had:</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">20,000+</h5>
+                                            <p>Cases opened</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">6,800+</h5>
+                                            <p>Convictions secured</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p>The case fundamentally changed how law enforcement approaches online crimes against children and set the stage for modern cybercrime investigative techniques.</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Case 2 -->
-                    <div class="case-accordion" id="case2">
+                    <div class="case-study" id="case2">
                         <div class="case-header">
                             <h3>Corporate Credit Card Fraud at a BPO</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="case-content">
                             <div class="case-content-inner">
-                                <img src="img/credit_card.jpg" alt="Credit card fraud investigation" class="case-image" />
+                                <img src="img/credit_card.jpg" alt="Credit card fraud investigation" class="case-image" >
                                 
                                 <div class="case-meta">
                                     <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
-                                    <span><i class="fas fa-rupee-sign"></i> 0.72 million loss</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹0.72 million loss</span>
                                     <span><i class="fas fa-laptop-code"></i> IT Act Section 66</span>
+                                    <span><i class="fas fa-award"></i> India Cyber Cop Award</span>
                                 </div>
                                 
-                                <p><strong>Background:</strong> The assistant manager with the fraud control unit of a large BPO organization filed a complaint alleging that two of its employees had conspired with a credit card holder to manipulate the credit limit and as a result cheated the company of INR 0.72 million.</p>
-                                
-                                <p>The BPO had around 350 employees who managed credit card issuance and customer service. Each had unique login credentials, and specific permissions for accessing systems. Employees couldn't change account details without proper authorization.</p>
+                                <h4>Case Overview</h4>
+                                <p>A business process outsourcing (BPO) company specializing in credit card services discovered fraudulent activities where employees manipulated credit limits and transaction records, resulting in significant financial losses. The case highlighted vulnerabilities in financial outsourcing operations and internal controls.</p>
                                 
                                 <h4>Modus Operandi</h4>
-                                <ul>
-                                    <li>Obtained temporary passwords by deliberately locking accounts</li>
-                                    <li>Reversed card transactions manually</li>
-                                    <li>Changed account addresses to prevent detection</li>
-                                </ul>
-                                
-                                <h4>Investigation Findings</h4>
-                                <p>Investigators analyzed the attendance log, system activity, and matched it with fraudulent transactions. They confirmed the involvement of the accused using ID logs, attendance records, and confirmation from merchant establishments.</p>
-                                
-                                <p><strong>Outcome:</strong> All accused were arrested and illegal assets recovered. The BPO was alerted about the software vulnerabilities. This case was awarded 2nd runner-up in the India Cyber Cop Award.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Case 3 -->
-                    <div class="case-accordion" id="case3">
-                        <div class="case-header">
-                            <h3>First Registered Cyber Harassment Case in West Bengal</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="case-content">
-                            <div class="case-content-inner">
-                                <img src="img/child" alt="Cyber harassment investigation" class="case-image" />
-                                
-                                <div class="case-meta">
-                                    <span><i class="fas fa-map-marker-alt"></i> Kolkata, India</span>
-                                    <span><i class="fas fa-history"></i> First registered case</span>
-                                    <span><i class="fas fa-user-secret"></i> IT Act Section 67</span>
-                                </div>
-                                
-                                <p><strong>Background:</strong> A lady lodged a complaint that she was being harassed by numerous obscene phone calls from unknown men at all hours. Many of these calls were received by her elderly in-laws, causing distress to her family and neighbors.</p>
-                                
-                                <p>When she changed her number, the harassment continued, with calls redirected to her neighbors asking for her by name. In some cases, men even visited her residence.</p>
-                                
-                                <h4>Investigation Highlights</h4>
-                                <ul>
-                                    <li>Police installed caller ID at her home</li>
-                                    <li>Discovered her email ID was used in chat rooms with auto-reply messages</li>
-                                    <li>Recovered deleted files with forensic tools</li>
-                                </ul>
-                                
-                                <p><strong>Motive:</strong> The complainant and the accused worked in the same company, and he felt disrespected as she was junior but did not treat him accordingly.</p>
-                                
-                                <p><strong>Significance:</strong> This became the first officially registered cybercrime case in West Bengal, marking a significant milestone in Indian cyber law enforcement.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Case 4 -->
-                    <div class="case-accordion" id="case4">
-                        <div class="case-header">
-                            <h3>Online Marketing Scam Targeting Small Businesses</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="case-content">
-                            <div class="case-content-inner">
-                                <img src="img/cat-4.jpg" alt="Online marketing scam" class="case-image" />
-                                
-                                <div class="case-meta">
-                                    <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
-                                    <span><i class="fas fa-users"></i> 80+ victims</span>
-                                    <span><i class="fas fa-rupee-sign"></i> INR 25,000 per victim</span>
-                                </div>
-                                
-                                <p><strong>Scam Details:</strong> Several small business owners in Mumbai began receiving emails and phone calls from a company claiming to be a leading digital marketing agency. They promised massive social media reach, top Google rankings, and celebrity endorsements for just a one-time fee of INR 25,000.</p>
-                                
-                                <h4>How It Worked</h4>
+                                <p>The perpetrators exploited several system weaknesses:</p>
                                 <ol>
-                                    <li>Victims asked to fill detailed forms and submit business documents</li>
-                                    <li>Made online payments through various gateways</li>
-                                    <li>After payment, all communication stopped</li>
-                                    <li>Websites shut down and email IDs stopped working</li>
+                                    <li><strong>Password Exploitation:</strong> Obtained temporary credentials by deliberately locking accounts</li>
+                                    <li><strong>Transaction Reversal:</strong> Manually reversed legitimate card transactions</li>
+                                    <li><strong>Data Manipulation:</strong> Changed account addresses to prevent detection</li>
+                                    <li><strong>Collusion:</strong> Worked with external cardholders to share illicit gains</li>
                                 </ol>
                                 
-                                <h4>Investigation Breakthrough</h4>
-                                <p>Cyber Crime Cell tracked payment gateways to a rented apartment in Navi Mumbai. Raid recovered:</p>
+                                <h4>Investigation Process</h4>
+                                <p>Cyber crime investigators employed multiple forensic techniques:</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Log Analysis</h5>
+                                            <p>Correlated system logs with fraudulent transactions</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Attendance Records</h5>
+                                            <p>Matched employee login times with fraudulent activities</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Digital Forensics</h5>
+                                            <p>Recovered deleted files and transaction records</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Merchant Verification</h5>
+                                            <p>Confirmed fraudulent transactions with vendors</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key me-2"></i>Security Lessons</h4>
+                                    <ul>
+                                        <li>Need for robust access controls in financial BPOs</li>
+                                        <li>Importance of separation of duties in transaction processing</li>
+                                        <li>Value of comprehensive activity logging and monitoring</li>
+                                        <li>Regular security audits of privileged accounts</li>
+                                    </ul>
+                                </div>
+                                
+                                <h4>Case Resolution</h4>
+                                <p>The investigation led to:</p>
                                 <ul>
-                                    <li>Multiple laptops and SIM cards</li>
-                                    <li>Pre-activated bank accounts</li>
-                                    <li>Scripts for fake promotional calls</li>
-                                    <li>15+ fake websites mimicking legitimate agencies</li>
+                                    <li>Arrest of all involved employees and external collaborators</li>
+                                    <li>Recovery of stolen assets</li>
+                                    <li>Implementation of enhanced security measures at the BPO</li>
+                                    <li>Recognition as 2nd runner-up in India Cyber Cop Award</li>
                                 </ul>
                                 
-                                <p><strong>Aftermath:</strong> Authorities issued advisories warning small businesses to verify online marketing firms through GST registration and company history before making payments.</p>
+                                <p>This case became a benchmark for investigating internal financial fraud in outsourcing environments.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Case 5 -->
-                    <div class="case-accordion" id="case5">
+                    <div class="case-study" id="case3">
                         <div class="case-header">
-                            <h3>The TJX Companies Data Breach (2007)</h3>
+                            <h3>WannaCry Ransomware Attack</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="case-content">
                             <div class="case-content-inner">
-                                <img src="https://www.wired.com/images_blogs/threatlevel/2010/03/tjx-logo.jpg" alt="TJX Companies logo" class="case-image" />
-                                
+                                <img src="img/wanna_cry.webp" alt="WannaCry Ransomware Attack" class="case-image" >
                                 <div class="case-meta">
-                                    <span><i class="fas fa-map-marker-alt"></i> Massachusetts, USA</span>
-                                    <span><i class="fas fa-credit-card"></i> 45.7M cards compromised</span>
-                                    <span><i class="fas fa-dollar-sign"></i> $250M losses</span>
+                                    <span><i class="fas fa-globe"></i> Global</span>
+                                    <span><i class="fas fa-calendar-alt"></i> May 2017</span>
+                                    <span><i class="fas fa-bug"></i> Ransomware</span>
+                                    <span><i class="fas fa-user-secret"></i> 200,000+ victims</span>
                                 </div>
-                                
-                                <p><strong>Breach Overview:</strong> Hackers exploited weak WiFi security at TJX (parent company of TJ Maxx and Marshalls) to access their central database over 18 months.</p>
-                                
+                                <h4>Case Background</h4>
+                                <p>In May 2017, the WannaCry ransomware attack spread rapidly across the globe, infecting over 200,000 computers in more than 150 countries. The ransomware encrypted data on infected systems, demanding Bitcoin payments for decryption keys. Notable victims included the UK's National Health Service (NHS), FedEx, and Honda.</p>
                                 <h4>Attack Methodology</h4>
-                                <ul>
-                                    <li>War driving to detect vulnerable store networks</li>
-                                    <li>Packet sniffing to intercept unencrypted data</li>
-                                    <li>SQL injection to penetrate main systems</li>
-                                </ul>
-                                
-                                <h4>Global Impact</h4>
-                                <p>Criminals created counterfeit cards worldwide. Forensic evidence linked the breach to cybercriminals in:</p>
-                                <ul>
-                                    <li>United States</li>
-                                    <li>Eastern Europe</li>
-                                    <li>Asia</li>
-                                </ul>
-                                
-                                <p><strong>Industry Changes:</strong> The case led to stricter Payment Card Industry Data Security Standards (PCI DSS) and widespread adoption of end-to-end encryption in retail.</p>
+                                <p>The attackers exploited a vulnerability in Microsoft Windows, known as EternalBlue, which had been previously leaked by the Shadow Brokers hacking group. The ransomware propagated as a worm, requiring no user interaction to spread within networks.</p>
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key"></i> Key Takeaways</h4>
+                                    <ul>
+                                        <li>Highlighted the importance of timely software patching and updates.</li>
+                                        <li>Demonstrated the potential for ransomware to cause widespread disruption.</li>
+                                        <li>Emphasized the need for robust backup and disaster recovery plans.</li>
+                                    </ul>
+                                </div>
+                                <h4>Outcomes and Impact</h4>
+                                <p>The attack caused billions of dollars in damages worldwide. It prompted organizations to reevaluate their cybersecurity practices and led to increased awareness about the dangers of ransomware.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Case 6 -->
-                    <div class="case-accordion" id="case6">
+                    <div class="case-study" id="case4">
                         <div class="case-header">
-                            <h3>Bangladesh Bank Heist (2016)</h3>
+                            <h3>Stuxnet Worm</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="case-content">
                             <div class="case-content-inner">
-                                <img src="https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fs3-ap-northeast-1.amazonaws.com%2Fpsh-ex-ftnikkei-3937bb4%2Fimages%2F9%2F7%2F0%2F0%2F3700079-1-eng-GB%2F20160229_Bangladesh%20bank.jpg" alt="Bangladesh Bank headquarters" class="case-image" />
-                                
+                                <img src="img/stuxnet.png" alt="Stuxnet Worm" class="case-image">
                                 <div class="case-meta">
-                                    <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
-                                    <span><i class="fas fa-network-wired"></i> SWIFT network compromise</span>
-                                    <span><i class="fas fa-dollar-sign"></i> $81M stolen</span>
+                                    <span><i class="fas fa-flag"></i> Iran</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Discovered in 2010</span>
+                                    <span><i class="fas fa-bug"></i> Computer Worm</span>
+                                    <span><i class="fas fa-atom"></i> Targeted nuclear facilities</span>
                                 </div>
-                                
-                                <p><strong>Attack Timeline:</strong></p>
+                                <h4>Case Background</h4>
+                                <p>Stuxnet was a highly sophisticated computer worm discovered in 2010. It specifically targeted supervisory control and data acquisition (SCADA) systems used in Iran's nuclear facilities, particularly affecting centrifuges used for uranium enrichment.</p>
+                                <h4>Attack Methodology</h4>
+                                <p>Stuxnet exploited multiple zero-day vulnerabilities and used stolen digital certificates to appear legitimate. Once inside a system, it altered the operation of industrial machinery while displaying normal operation signals to monitoring systems.</p>
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key"></i> Key Takeaways</h4>
+                                    <ul>
+                                        <li>Marked one of the first known uses of cyber warfare to cause physical damage.</li>
+                                        <li>Showcased the potential for cyber attacks to target critical infrastructure.</li>
+                                        <li>Highlighted the need for robust security in industrial control systems.</li>
+                                    </ul>
+                                </div>
+                                <h4>Outcomes and Impact</h4>
+                                <p>Stuxnet is believed to have caused significant delays in Iran's nuclear program. Its discovery led to increased focus on cybersecurity in industrial environments and raised concerns about the weaponization of cyber tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study" id="case5">
+                        <div class="case-header">
+                            <h3>Yahoo Data Breach</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-content-inner">
+                                <img src="img/yahoo.jpeg" alt="Yahoo Logo" class="case-image">
+                                <div class="case-meta">
+                                    <span><i class="fas fa-globe"></i> Global</span>
+                                    <span><i class="fas fa-calendar-alt"></i> 2013-2014</span>
+                                    <span><i class="fas fa-user-secret"></i> Data Breach</span>
+                                    <span><i class="fas fa-users"></i> 3 billion accounts affected</span>
+                                </div>
+                                <h4>Case Background</h4>
+                                <p>Between 2013 and 2014, Yahoo experienced two massive data breaches compromising all 3 billion user accounts. The breaches exposed names, email addresses, phone numbers, dates of birth, and hashed passwords.</p>
+                                <h4>Attack Methodology</h4>
+                                <p>Attackers exploited vulnerabilities to gain unauthorized access to Yahoo's user database, extracting sensitive information over an extended period.</p>
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key"></i> Key Takeaways</h4>
+                                    <ul>
+                                        <li>Emphasized the necessity for robust encryption and security protocols.</li>
+                                        <li>Highlighted the importance of timely breach disclosure to users.</li>
+                                        <li>Led to increased scrutiny of corporate cybersecurity practices.</li>
+                                    </ul>
+                                </div>
+                                <h4>Outcomes and Impact</h4>
+                                <p>Yahoo faced significant reputational damage and legal consequences, including a $117.5 million settlement for affected users. The incident underscored the critical need for stringent data protection measures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study" id="case6">
+                        <div class="case-header">
+                            <h3>Target Corporation Data Breach</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-content-inner">
+                                <img src="img/target-hacked.webp" alt="Target Corporation Logo" class="case-image">
+                                <div class="case-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> United States</span>
+                                    <span><i class="fas fa-calendar-alt"></i> 2013</span>
+                                    <span><i class="fas fa-user-secret"></i> Data Breach</span>
+                                    <span><i class="fas fa-credit-card"></i> 40 million credit cards compromised</span>
+                                </div>
+                                <h4>Case Background</h4>
+                                <p>In 2013, Target Corporation suffered a data breach where hackers stole credit and debit card information of approximately 40 million customers during the holiday shopping season.</p>
+                                <h4>Attack Methodology</h4>
+                                <p>Attackers gained access through network credentials stolen from a third-party vendor, exploiting weak access controls to install malware on Target's point-of-sale systems.</p>
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key"></i> Key Takeaways</h4>
+                                    <ul>
+                                        <li>Highlighted vulnerabilities associated with third-party vendors.</li>
+                                        <li>Emphasized the need for robust network segmentation and monitoring.</li>
+                                        <li>Led to widespread adoption of EMV chip technology in the U.S.</li>
+                                    </ul>
+                                </div>
+                                <h4>Outcomes and Impact</h4>
+                                <p>Target faced significant financial losses, including a $18.5 million multistate settlement. The breach prompted retailers to enhance cybersecurity measures and adopt more secure payment technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study" id="case7">
+                        <div class="case-header">
+                            <h3>Equifax Data Breach</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-content-inner">
+                                <img src="img/equifax.jpeg" alt="Equifax Logo" class="case-image">
+                                <div class="case-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> United States</span>
+                                    <span><i class="fas fa-calendar-alt"></i> 2017</span>
+                                    <span><i class="fas fa-user-secret"></i> Data Breach</span>
+                                    <span><i class="fas fa-id-card"></i> 147 million individuals affected</span>
+                                </div>
+                                <h4>Case Background</h4>
+                                <p>In 2017, Equifax, one of the largest credit reporting agencies, announced a data breach exposing personal information of approximately 147 million individuals, including Social Security numbers and driver's license details.</p>
+                                <h4>Attack Methodology</h4>
+                                <p>Attackers exploited a vulnerability in Apache Struts, a web application framework, which Equifax had failed to patch, allowing unauthorized access to sensitive data.</p>
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key"></i> Key Takeaways</h4>
+                                    <ul>
+                                        <li>Underlined the critical importance of timely software patching.</li>
+                                        <li>Demonstrated the severe consequences of inadequate cybersecurity practices.</li>
+                                        <li>Led to increased regulatory focus on data protection and breach notification.</li>
+                                    </ul>
+                                </div>
+                                <h4>Outcomes and Impact</h4>
+                                <p>Equifax agreed to a settlement of up to $700 million to compensate affected consumers and improve security measures. The breach served as a wake-up call for organizations to prioritize cybersecurity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study" id="case8">
+                        <div class="case-header">
+                            <h3>ATM Malware Attack on Cosmos Bank</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-content-inner">
+                                <img src="img/ATM malware.jpeg" alt="ATM Malware Attack" class="case-image">
+                    
+                                <div class="case-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹94 crore loss</span>
+                                    <span><i class="fas fa-laptop-code"></i> IT Act Sections 43 & 66</span>
+                                    <span><i class="fas fa-shield-alt"></i> CERT-In Alert</span>
+                                </div>
+                    
+                                <h4>Case Overview</h4>
+                                <p>In 2018, hackers launched a sophisticated malware attack on Cosmos Bank's ATM switch server, allowing unauthorized withdrawals from over 28 countries. This was one of the largest cyber heists in Indian banking history.</p>
+                    
+                                <h4>Modus Operandi</h4>
                                 <ol>
-                                    <li><strong>Reconnaissance:</strong> Hackers studied bank operations for months</li>
-                                    <li><strong>Infiltration:</strong> Gained access through phishing emails</li>
-                                    <li><strong>Preparation:</strong> Installed malware to study processes</li>
-                                    <li><strong>Execution:</strong> Initiated 35 fraudulent transactions</li>
-                                    <li><strong>Exfiltration:</strong> $81 million transferred to accounts in Philippines</li>
+                                    <li><strong>Server Breach:</strong> Hackers compromised the bank's ATM switch server.</li>
+                                    <li><strong>Malware Injection:</strong> Installed malware to approve fake transactions.</li>
+                                    <li><strong>Fake Card Cloning:</strong> Used cloned debit cards globally.</li>
+                                    <li><strong>Multiple Withdrawals:</strong> Coordinated cash-outs through global mule networks.</li>
                                 </ol>
-                                
-                                <h4>Key Vulnerabilities Exploited</h4>
+                    
+                                <h4>Investigation Process</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Malware Forensics</h5>
+                                            <p>Analyzed the malicious code on ATM servers</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">SWIFT Audit</h5>
+                                            <p>Checked interbank messaging for unauthorized transfers</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Transaction Tracing</h5>
+                                            <p>Mapped withdrawal patterns across countries</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Network Traffic Monitoring</h5>
+                                            <p>Detected unusual communication with external IPs</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key me-2"></i>Security Lessons</h4>
+                                    <ul>
+                                        <li>Segmentation of critical systems</li>
+                                        <li>Real-time fraud monitoring</li>
+                                        <li>Regular malware and vulnerability scans</li>
+                                        <li>Global coordination for ATM networks</li>
+                                    </ul>
+                                </div>
+                    
+                                <h4>Case Resolution</h4>
                                 <ul>
-                                    <li>Outdated $10 network switches with no firewall</li>
-                                    <li>Use of second-hand routers without security checks</li>
-                                    <li>No separation between SWIFT and office networks</li>
+                                    <li>Case handed over to INTERPOL for global leads</li>
+                                    <li>Cyber insurance covered partial losses</li>
+                                    <li>Bank upgraded core banking systems</li>
+                                    <li>Creation of guidelines for secure ATM operations</li>
                                 </ul>
-                                
-                                <p><strong>Aftermath:</strong> The bank recovered about $15 million. The case led to major reforms in central bank security protocols worldwide.</p>
+                    
+                                <p>This case is cited in cybersecurity forums for ATM malware defense strategies.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Case 7 -->
-                    <div class="case-accordion" id="case7">
+                    <div class="case-study" id="case9">
                         <div class="case-header">
-                            <h3>WannaCry Ransomware Attack (2017)</h3>
+                            <h3>UIDAI Aadhaar Data Leak</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="case-content">
                             <div class="case-content-inner">
-                                <img src="https://cdn.arstechnica.net/wp-content/uploads/2017/05/wannacry-ransom-demand-800x534.jpg" alt="WannaCry ransom screen" class="case-image" />
-                                
+                                <img src="img/adhar.png" alt="Aadhaar Data Breach" class="case-image">
+                    
                                 <div class="case-meta">
-                                    <span><i class="fas fa-globe"></i> Worldwide attack</span>
-                                    <span><i class="fas fa-hospital"></i> NHS heavily impacted</span>
-                                    <span><i class="fas fa-clock"></i> 4 days active</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> India (Nationwide)</span>
+                                    <span><i class="fas fa-rupee-sign"></i> Data of over 1 billion citizens</span>
+                                    <span><i class="fas fa-laptop-code"></i> IT Act Section 72</span>
+                                    <span><i class="fas fa-lock"></i> Right to Privacy Concern</span>
                                 </div>
-                                
-                                <p><strong>Attack Overview:</strong> The WannaCry ransomware cryptoworm targeted computers running Microsoft Windows in May 2017, encrypting data and demanding ransom payments in Bitcoin.</p>
-                                
-                                <h4>Key Statistics</h4>
+                    
+                                <h4>Case Overview</h4>
+                                <p>In 2018, it was reported that Aadhaar data including names, addresses, and Aadhaar numbers of over 1 billion Indians was allegedly accessible online for a fee. This raised significant privacy and national security concerns.</p>
+                    
+                                <h4>Modus Operandi</h4>
+                                <ol>
+                                    <li><strong>Unauthorized API Access:</strong> Exploited loopholes in Aadhaar verification APIs</li>
+                                    <li><strong>Credential Sharing:</strong> Used leaked admin credentials of enrollment agents</li>
+                                    <li><strong>Data Dump Sales:</strong> Offered access via WhatsApp for ₹500</li>
+                                    <li><strong>No Encryption:</strong> Sensitive data was stored in plaintext</li>
+                                </ol>
+                    
+                                <h4>Investigation Process</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Access Logs Analysis</h5>
+                                            <p>Tracked unauthorized access attempts</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">API Exploit Testing</h5>
+                                            <p>Identified vulnerable endpoints</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Audit of Registrars</h5>
+                                            <p>Reviewed practices of Aadhaar enrollment centers</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Undercover Reporting</h5>
+                                            <p>Media sting revealed data sellers on WhatsApp</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key me-2"></i>Security Lessons</h4>
+                                    <ul>
+                                        <li>Need for encryption of PII (Personally Identifiable Information)</li>
+                                        <li>Strict access control on sensitive APIs</li>
+                                        <li>Regular audits of government IT infrastructure</li>
+                                        <li>Accountability for third-party data handlers</li>
+                                    </ul>
+                                </div>
+                    
+                                <h4>Case Resolution</h4>
                                 <ul>
-                                    <li>200,000+ computers infected across 150 countries</li>
-                                    <li>Estimated damages: $4 billion</li>
-                                    <li>NHS UK: 19,000 appointments canceled</li>
-                                    <li>FedEx, Renault, and Deutsche Bahn impacted</li>
+                                    <li>Government denied large-scale breach but initiated audits</li>
+                                    <li>UIDAI disabled exposed APIs and added security layers</li>
+                                    <li>Debate led to strengthening India's data privacy law</li>
+                                    <li>Public awareness increased about digital identity safety</li>
                                 </ul>
-                                
-                                <h4>Technical Details</h4>
-                                <p>The ransomware exploited a vulnerability in Microsoft's implementation of the Server Message Block (SMB) protocol, using the EternalBlue exploit developed by the NSA and leaked by the Shadow Brokers group.</p>
-                                
-                                <p><strong>Hero of the Story:</strong> A 22-year-old UK researcher Marcus Hutchins discovered and activated a "kill switch" that slowed the spread.</p>
-                                
-                                <p><strong>Lessons Learned:</strong> The attack highlighted the dangers of stockpiling vulnerabilities and the importance of timely system updates.</p>
+                    
+                                <p>This case triggered national discussions on digital identity security and privacy frameworks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study" id="case10">
+                        <div class="case-header">
+                            <h3>Sony Pictures Hack by Lazarus Group</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-content-inner">
+                                <img src="img/soni.jpeg" alt="Sony Pictures Hack" class="case-image">
+                    
+                                <div class="case-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Los Angeles, USA</span>
+                                    <span><i class="fas fa-dollar-sign"></i> $100 million+ damages</span>
+                                    <span><i class="fas fa-laptop-code"></i> CFAA & Global Sanctions</span>
+                                    <span><i class="fas fa-user-secret"></i> State-sponsored Attack</span>
+                                </div>
+                    
+                                <h4>Case Overview</h4>
+                                <p>In 2014, North Korean state-sponsored hackers known as the Lazarus Group breached Sony Pictures, leaking sensitive emails, unreleased films, and employee data. The attack was allegedly retaliation for a film mocking North Korea's leader.</p>
+                    
+                                <h4>Modus Operandi</h4>
+                                <ol>
+                                    <li><strong>Spear Phishing:</strong> Targeted executives via fake emails</li>
+                                    <li><strong>Malware Deployment:</strong> Used "Wiper" malware to destroy systems</li>
+                                    <li><strong>Data Exfiltration:</strong> Leaked TBs of sensitive documents</li>
+                                    <li><strong>Extortion:</strong> Demanded withdrawal of the film "The Interview"</li>
+                                </ol>
+                    
+                                <h4>Investigation Process</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">IP Attribution</h5>
+                                            <p>Linked traffic to known North Korean addresses</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Malware Signature Analysis</h5>
+                                            <p>Matched with previous Lazarus attacks</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Email Header Tracing</h5>
+                                            <p>Identified spoofed sources and time patterns</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded mb-3">
+                                            <h5 class="text-primary">Government Collaboration</h5>
+                                            <p>US-CERT and FBI collaborated on threat attribution</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="key-takeaways">
+                                    <h4><i class="fas fa-key me-2"></i>Security Lessons</h4>
+                                    <ul>
+                                        <li>Need for phishing awareness and training</li>
+                                        <li>Importance of offsite backups and disaster recovery</li>
+                                        <li>Criticality of zero-trust network models</li>
+                                        <li>Role of geopolitical risks in cybersecurity</li>
+                                    </ul>
+                                </div>
+                    
+                                <h4>Case Resolution</h4>
+                                <ul>
+                                    <li>FBI officially blamed North Korea</li>
+                                    <li>Sony rebuilt IT infrastructure from scratch</li>
+                                    <li>US imposed sanctions on Lazarus Group</li>
+                                    <li>Industry-wide alerts and protections increased</li>
+                                </ul>
+                    
+                                <p>This case is a turning point in understanding cyber warfare and nation-state threats.</p>
                             </div>
                         </div>
                     </div>
@@ -477,55 +824,63 @@
             </div>
         </div>
     </div>
-    <!-- Cases End -->
-        
-<!-- Footer Start -->
-<footer class="bg-dark text-white pt-5 pb-4">
-    <div class="container text-md-left">
-        <div class="row text-md-left">
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Cyber Birds</h5>
-                <p>Your trusted team for cybersecurity protection, digital safety, and cyber support solutions.</p>
-            </div>
 
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
-                <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
-                <p><a href="about.html" class="text-white text-decoration-none">About</a></p>
-                <p><a href="cases.html" class="text-white text-decoration-none">Cases</a></p>
-                <p><a href="contact.html" class="text-white text-decoration-none">Contact</a></p>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Cyber Birds</h5>
+                    <p>Providing cybersecurity education and awareness since 2020.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
 
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
-                <p><i class="bi bi-geo-alt"></i> Sector 101 Noida, Uttar Pradesh 201304</p>
-                <p><i class="bi bi-envelope"></i> grani1794@gmail.com</p>
-                <p><i class="bi bi-phone"></i> +91 9412877489</p>
-            </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
+                    <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+                    <p><a href="about.html" class="text-white text-decoration-none">About</a></p>
+                    <p><a href="cases.html" class="text-white text-decoration-none">Case Studies</a></p>
+                    <p><a href="contact.html" class="text-white text-decoration-none">Contact</a></p>
+                </div>
 
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold">Follow Us</h5>
-                <a href="#" class="text-white fs-4 me-3"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-white fs-4 me-3"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-white fs-4 me-3"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-white fs-4"><i class="bi bi-github"></i></a>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+                    <p><i class="fas fa-map-marker-alt me-3"></i> Sector 101 Noida, Uttar Pradesh</p>
+                    <p><i class="fas fa-envelope me-3"></i> info@cyberbirds.org</p>
+                    <p><i class="fas fa-phone-alt me-3"></i> +91 9412877489</p>
+                </div>
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Newsletter</h5>
+                    <p>Subscribe for cybersecurity updates</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>&copy; 2025 Cyber Birds. All rights reserved.</p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-md-end">
+                        <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                        <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <hr class="mb-4">
-        <div class="row align-items-center">
-            <div class="col-md-7 col-lg-8">
-                <p>&copy; 2025 Cyber Birds. All Rights Reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer End -->
+    </footer>
 
-
-
-    <!-- Back to Top -->
+    <!-- Back to Top Button -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -539,27 +894,57 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Accordion functionality
+        // Enhanced Accordion Functionality
         $(document).ready(function(){
+            // Initialize first case as open
+            $('#case1').addClass('active').find('.case-header i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+            
+            // Case accordion toggle
             $('.case-header').click(function(){
-                $(this).parent().toggleClass('active');
-                $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
-                $(this).parent().siblings().removeClass('active').find('.case-header i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                const caseStudy = $(this).parent();
+                const isActive = caseStudy.hasClass('active');
+                
+                // Close all cases first
+                $('.case-study').removeClass('active').find('.case-header i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                
+                // If clicked case wasn't active, open it
+                if(!isActive) {
+                    caseStudy.addClass('active').find('.case-header i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                }
+                
+                // Smooth scroll to case for mobile
+                if($(window).width() < 992) {
+                    $('html, body').animate({
+                        scrollTop: caseStudy.offset().top - 100
+                    }, 300);
+                }
             });
             
             // Smooth scrolling for quick links
             $('.quick-link-item a').click(function(e){
                 e.preventDefault();
-                var target = $(this).attr('href');
+                const target = $(this).attr('href');
+                
+                // Close all cases first
+                $('.case-study').removeClass('active').find('.case-header i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                
+                // Open target case
+                $(target).addClass('active').find('.case-header i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                
+                // Smooth scroll
                 $('html, body').animate({
                     scrollTop: $(target).offset().top - 100
                 }, 500);
-                
-                // Open the target accordion
-                $(target).addClass('active').find('.case-header i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
             });
+            
+            // Lazy loading for images
+            if('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            }
         });
     </script>
 </body>
-
-</html>
+</html
