@@ -4,7 +4,7 @@ A modern, responsive, and informative website focused on raising cybersecurity a
 
 ## 🔗 Live Demo
 
-[View Live Site](https://cyber-tech19.github.io/cyber)
+[View Live Site](https://cyberbirds19.github.io/cyber)
 
 ## 🚀 Features
 
@@ -38,23 +38,6 @@ cd cyber
 ```
 
 3. Open `index.html` in your browser.
-
-## 📁 Folder Structure
-
-```
-Cyber/
-│
-├── index.html
-├── contact.html
-├── redirect.html
-├── blog.html
-├── style.css
-├── media.css
-├── main.js
-└── assets/
-    ├── images/
-    └── icons/
-```
 
 ## 👤 Author
 
