@@ -41,7 +41,7 @@ cd cyber
 
 ## 👤 Author
 
-- [Cyber Tech](https://www.instagram.com/goswami__rani1819/)
+- [Rani Giri](https://www.instagram.com/goswami__rani1819/)
 
 ## 📄 License
 
