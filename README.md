@@ -1,6 +1,6 @@
 # CyberSecurity Awareness Hub 🛡️
 
-A modern, responsive, and informative website focused on raising cybersecurity awareness. It covers key concepts, real-world case studies, and best practices to help users stay safe in the digital world.
+A modern, responsive, and informative website designed to promote cybersecurity awareness. This platform educates users on essential cybersecurity concepts, real-world incidents, and best practices to stay safe online.
 
 ## 🔗 Live Demo
 
@@ -41,7 +41,7 @@ cd cyber
 
 ## 👤 Author
 
-- [Cyber Tech](https://www.instagram.com/cyber_.tech)
+- [Cyber Tech](https://www.instagram.com/goswami__rani1819/)
 
 ## 📄 License
 
